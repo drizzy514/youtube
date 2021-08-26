@@ -19,7 +19,7 @@ function Video (){
                 
          <div className="youtube-video">
              <div className="tube-video">
-             <iframe width="1000" height="700" src="https://www.youtube.com/embed/L-Rjyl52sPQ"
+             <iframe title="pdp academy" width="1000" height="700" src="https://www.youtube.com/embed/L-Rjyl52sPQ"
             frameBorder="no"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen></iframe>
@@ -70,7 +70,7 @@ function Video (){
                             data.map((video) => (
                                 (
                                     <li className="next-videos__item" key={video.id}>
-                                            <iframe width="367" height="213" src={video.url}
+                                            <iframe title="youtube video" width="367" height="213" src={video.url}
                                             frameBorder="no"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen></iframe>
