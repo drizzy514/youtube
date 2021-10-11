@@ -170,3 +170,52 @@
 .tube-video{
     width: 1000px;
 }
+
+@media screen and(max-width:400px) {
+    .youtube-video{
+        max-width: 320px;
+        padding: 10px;
+        margin-left: 0;
+    }
+    .tube-video{
+        iframe{
+            width: 300px;
+            height: 180px;
+        }
+    }
+    .youtube-video__title{
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 25px;
+        width: 210px;
+        margin: 0;
+        margin-top: 8px;
+    }
+    .youtube-video__statics{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 300px;
+        p{
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+        }
+        .buttons{
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    
+    }
+
+    .youtube-video__description{
+     display: none;
+    }
+    .next-videos{
+        display: none;
+    }
+
+}

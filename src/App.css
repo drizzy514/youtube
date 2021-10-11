@@ -3,6 +3,9 @@
 .app{
     background-color: #17171F;
 }
+.app-active{
+    background-color: #020533;
+}
 body{
     font-family: "Mulish", sans-serif;
     margin: 0;

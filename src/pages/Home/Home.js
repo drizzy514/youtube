@@ -6,6 +6,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import UserVideo from "../../components/UserVideo/UserVideo";
 import RecomendedVideo from "../../components/RecomendedVideo/RecomendedVideo";
 import FoodDrinkVideo from "../../components/FoodDrinkVideo/FoodDrinkVideo";
+import PhoneVideos from "../../components/PhoneVideos/PhoneVideos";
 
 function Home (){
     return(
@@ -14,7 +15,8 @@ function Home (){
           <div className="sidebar-body">
              <Sidebar />
              <div className="components">
-                  <UserVideo />
+                  <PhoneVideos />
+                  <UserVideo  />
                 <RecomendedVideo />
                 <FoodDrinkVideo />
 

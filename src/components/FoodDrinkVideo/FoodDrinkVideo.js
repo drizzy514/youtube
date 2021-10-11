@@ -12,16 +12,18 @@ function FoodDrinkVideo (){
     const [video, setVideo] = useState([])
     useEffect(() => {
         fetch("https://free-football-soccer-videos1.p.rapidapi.com/v1/", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "free-football-soccer-videos1.p.rapidapi.com",
-		"x-rapidapi-key": "b7d5081a08msh6f22ba28e428322p19852djsnbd1fc1d5f391"
-	}
-})
-        .then(response => {
-           return response.json();
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "free-football-soccer-videos1.p.rapidapi.com",
+                "x-rapidapi-key": "b7d5081a08msh6f22ba28e428322p19852djsnbd1fc1d5f391"
+            }
         })
-        .then(data =>setVideo(data))
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            return setVideo(data)
+        })
         .catch(err => {
             console.error(err);
         });

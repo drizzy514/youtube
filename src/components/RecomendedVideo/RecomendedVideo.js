@@ -12,17 +12,20 @@ import { Link } from "react-router-dom";
 function RecomendedVideo (){
     const [recomendedVideo, setRecomendedVideo] = useState([])
   useEffect(() =>{
-    fetch("https://vod-app.p.rapidapi.com/related/show/%7Bshow-slug%7D", {
+  
+    fetch("https://free-football-soccer-videos1.p.rapidapi.com/v1/", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "vod-app.p.rapidapi.com",
+            "x-rapidapi-host": "free-football-soccer-videos1.p.rapidapi.com",
             "x-rapidapi-key": "b7d5081a08msh6f22ba28e428322p19852djsnbd1fc1d5f391"
         }
     })
     .then(response => {
-        return response.json();
+        return response.json()
     })
-    .then(data =>setRecomendedVideo(data.items))
+    .then(data => {
+        return setRecomendedVideo(data)
+    })
     .catch(err => {
         console.error(err);
     });
@@ -53,7 +56,7 @@ function RecomendedVideo (){
                                      
                              <li className="videos-item" key={video.id}>
                              <Link to="/video" className="video-link">
-                                 <img width="540" height="250" src={video.images.portrait} alt="video-img" />
+                                 <img width="540" height="250" src={video.thumbnail} alt="video-img" />
                                  </Link>
                                  <h3 className="video-photographer">
                                     {video.title}

@@ -12,10 +12,22 @@ import Right from "../Lib/Svg/RightArrowIcon";
 function UserVideo (){
         const [ videos, setVideos ] = useState([]);
         useEffect(() =>{
-            fetch("https://jsonplaceholder.typicode.com/photos")
-            .then((res) => res.json() )
-            .then((data) => setVideos(data)
-            );
+            fetch("https://free-football-soccer-videos1.p.rapidapi.com/v1/", {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "free-football-soccer-videos1.p.rapidapi.com",
+                    "x-rapidapi-key": "b7d5081a08msh6f22ba28e428322p19852djsnbd1fc1d5f391"
+                }
+            })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                return setVideos(data)
+            })
+            .catch(err => {
+                console.error(err);
+            });
         },[])
     return (
         <>
@@ -46,7 +58,7 @@ function UserVideo (){
                           
                          ( <li className="videos-item" key={video.id}>
                              <Link to="/video" className="video-link">
-                                    <img src={video.url} alt="video"  width="250" height="150"/> 
+                                    <img src={video.thumbnail} alt="video"  width="250" height="150"/> 
                                     </Link>
                                     <h3 className="video-title">{video.title}</h3>  
                                     

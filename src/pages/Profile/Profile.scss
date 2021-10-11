@@ -170,3 +170,103 @@
         border-radius: 30px;
     }
 }
+
+.channel-search{
+    display: none;
+}
+@media screen and(max-width:400px) {
+    .channel-body{
+        img{
+            width: 320px;
+            height: 100px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    }
+    .channel-header{
+        width: 320px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        margin-top: -67px;
+        p{
+            color: crimson;
+            font-weight: bold;
+        }
+        .channel-title{
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 30px;
+            line-height: 25px;
+        }
+        .subscribe{
+            margin-left: 0;
+            margin-top: 20px;
+            align-items: flex-start;
+            flex-direction: column-reverse;
+        }
+    }
+    .channel-content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .channel-list{
+        width: 320px;
+        padding: 10px;
+        overflow-x: auto;
+        .channel-item{
+            margin-right: 40px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    .recomended-channel{
+        display: none;
+    }
+    .channel-search{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin-top: -30px;
+        .channel-input{
+            margin-left: 8px;
+            padding: 8px 14px;
+            border: none;
+            outline: none;
+            background-color: #C2C2C2;
+            opacity: 0.8;
+            font-family: monospace;
+            font-size: 15px;
+            color: #fff;
+            border-radius: 30px;
+            width: 194px;
+
+        }
+        .search-btn{
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 8px 14px;
+            background-color: #C2C2C2;
+            opacity: 0.8;
+            border-radius: 30px;
+            font-family: monospace;
+            margin-left: 8px;
+        }
+    }
+
+    .chanel-video{
+       display: none;
+    }
+    .video-list{
+        display: none;
+    }
+    .channel-user{
+        display: none;
+    }
+    
+}

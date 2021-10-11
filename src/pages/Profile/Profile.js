@@ -1,12 +1,12 @@
-import "./Chanel.scss"
-import { Link } from "react-router-dom";
+import "./Profile.scss"
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
 
 // components
 import Sidebar from "../../components/Sidebar/Sidebar"
-
+import PhoneVideos from "../../components/PhoneVideos/PhoneVideos"
 // icons
 import Cover from "../../components/Lib/Png/Cover.png"; 
 import videoPhoto from "../../components/Lib/Png/video-photo.png";
@@ -19,7 +19,13 @@ import Left from "../../components/Lib/Svg/LeftArrowIcon";
 import Right from "../../components/Lib/Svg/RightArrowIcon";
 
 
-function Channel (){
+function Profile (){
+
+        const history = useHistory()
+        const logOut = () =>{
+            localStorage.clear()
+            history.push("/")
+        }
 
 
     const [userVideos, setUserVideos] = useState([])
@@ -39,8 +45,8 @@ function Channel (){
                     console.error(err);
                 });
             }, [])
-    const userName = window.localStorage.getItem("username");
-    const userImg = window.localStorage.getItem("userImg");
+    const userName = window.localStorage.getItem("token");
+    const userInput = window.localStorage.getItem("userinput");
 
     return (
         <>
@@ -51,18 +57,19 @@ function Channel (){
                     <img src={Cover} width="1200" alt="cover" />
 
                     <div className="channel-header">
-                        <img src={userImg} width="40" height="40" alt="user-icon"/>
+                        <p>{userInput}</p>
                         <div className="user">  
                             <h1 className="channel-title">
                                 {userName}
                             </h1>
+                          
                             <p className="user-subscribe">245K subscribed</p>
                         </div>
                         <div className="subscribe">
                             <Notification />
-                            <button type="button" className="subscribe-btn">
-                                Subscribe 2.3m
-                            </button>
+                          
+                                <Link className="subscribe-btn" onClick={logOut}>LogOut</Link>
+                            
 
                         </div>
                     </div>
@@ -100,8 +107,12 @@ function Channel (){
                                 </Link>
                             </li>
                         </ul>
-                        <SearchIcon />
-                        <p>Recommended channel</p>
+                        <div className="channel-search">
+                             <SearchIcon /> 
+                             <input className="channel-input" type="text" placeholder="search..."/>
+                             <button className="search-btn" type="submit">Search</button>
+                        </div>
+                        <p className="recomended-channel">Recommended channel</p>
                     </div>
                 </div>
                <div className="chanel-video">
@@ -171,8 +182,11 @@ function Channel (){
                 </div>
             </div>
         </div>
+
+
+        <PhoneVideos />
         </>
 
     )
 }
-export default Channel
+export default Profile

@@ -25,3 +25,8 @@
 .autor{
     margin-left: 373px;
 }
+@media screen and(max-width:400px) {
+    .recomended{
+        display: none;
+    }
+}

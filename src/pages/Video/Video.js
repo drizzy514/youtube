@@ -9,20 +9,21 @@ import { Link } from "react-router-dom";
 import BadHandIcon from "../../components/Lib/Svg/BadHandIcon";
 import GoodIcon from "../../components/Lib/Svg/GoodIcon";
 import FoodLogo from "../../components/Lib/Png/foods-logo.png";
-
+import PhoneVideoPage from "../../components/PhoneVideoPage/PhoneVideoPage";
+import videoData from "../../assets/data/videoData";
 
 function Video (){
 
     return <>
-         
+      
          
                 
          <div className="youtube-video">
              <div className="tube-video">
-             <iframe width="1000" height="700" src="https://www.youtube.com/embed/L-Rjyl52sPQ"
+             <iframe title="pdp academy" width="1000" height="700" src="https://www.youtube.com/embed/L-Rjyl52sPQ"
             frameBorder="no"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
+               
+                ></iframe>
                 <h1 className="youtube-video__title">Dude You Re Getting A Telescope</h1>
                 <div className="youtube-video__statics">
                     <p>123k     <span>views</span> </p>
@@ -38,7 +39,7 @@ function Video (){
                         </button>
                 </div>
                 </div>
-          
+                        
                 <div className="youtube-video__description">
                     <img className="food-icon" src={FoodLogo} alt="food-icon" width="80" height="80" />
                     <div className="youtube-video__text">
@@ -70,7 +71,7 @@ function Video (){
                             data.map((video) => (
                                 (
                                     <li className="next-videos__item" key={video.id}>
-                                            <iframe width="367" height="213" src={video.url}
+                                            <iframe title="YoutubeVideo" width="367" height="213" src={video.url}
                                             frameBorder="no"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen></iframe>
@@ -85,10 +86,28 @@ function Video (){
              </div>
         </div>           
             
-
-          
-                
-            
+                 <PhoneVideoPage />
+               
+        
+            <ul className="phone-videos__list">
+                {
+                        videoData.map((item) => (
+                            (
+                                <li className="phone-videos__item" key={item.id}>
+                                        <iframe title="YoutubeVideo" width="290" height="213" src={item.url}
+                                            frameBorder="no"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen></iframe>
+                                           <Link to="/video">
+                                           <h3> {item.title} </h3>
+                                           </Link>
+                                </li>
+                            )
+                        )
+                          
+                        )
+                }
+            </ul>
     </>
 }
 export default Video

@@ -9,11 +9,9 @@ import { Link, NavLink } from "react-router-dom";
 // icons
 import HomeIcon from "../Lib/Svg/HomeIcon";
 import TrendingIcon from "../Lib/Svg/TrendingIcon";
-import SubscriptionIcon from "../Lib/Svg/SubscriptionIcon";
 import LibrariyIcon from "../Lib/Svg/LIbraryIcon";
 import HistoryIcon from "../Lib/Svg/HistoryIcon";
 import WatchIcon from "../Lib/Svg/WatchIcon";
-import StarIcon from "../Lib/Svg/StarIcon";
 import LikeIcon from "../Lib/Svg/LikeIcon";
 import MusicIcon from "../Lib/Svg/MusicIcon";
 import GamesIcon from "../Lib/Svg/GamesIcon";
@@ -32,39 +30,40 @@ import User6 from "../Lib/Png/user-6.png";
 function Sidebar (){
     return (
         <>
+                
             <div className="sidebar">
                 <ul className="global-sidebar__list">
                     <li className="global-sidebar__item">
                         <HomeIcon />   <NavLink to="/" activeClassName="main-link__active"  className="global-sidebar__item-link">  Home</NavLink>
                     </li>
                     <li className="global-sidebar__item">
-                        <TrendingIcon /><NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link"> Trending</NavLink>
+                        <TrendingIcon /><NavLink to="/trend" activeClassName="active-link" className="global-sidebar__item-link"> Trending</NavLink>
                     </li>
-                    <li className="global-sidebar__item">
-                        <SubscriptionIcon />     <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  Subscriptions</NavLink>
-                    </li>
+                    {/* <li className="global-sidebar__item">
+                        <SubscriptionIcon />     <Link to="/channel"className="global-sidebar__item-link">  Subscriptions</Link>
+                    </li> */}
                 </ul>
                 <ul className="sidebar-list">
                     <li className="sidebar-item">
-                        <LibrariyIcon />   <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link"> Library</NavLink> 
+                        <LibrariyIcon />   <NavLink to="/library" activeClassName="active-link" className="global-sidebar__item-link"> Library</NavLink> 
                     </li>
                     <li className="sidebar-item">
-                      <HistoryIcon />  <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  History</NavLink>
+                      <HistoryIcon />  <NavLink to="/history" activeClassName="active-link" className="global-sidebar__item-link">  History</NavLink>
                     </li>
                     <li className="sidebar-item">
-                     <WatchIcon />   <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  Watch later</NavLink>
+                     <WatchIcon />   <NavLink to="/watchlater" activeClassName="active-link" className="global-sidebar__item-link">  Watch later</NavLink>
                     </li>
-                    <li className="sidebar-item">
+                    {/* <li className="sidebar-item">
                      <StarIcon />   <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  Favourites</NavLink>
+                    </li> */}
+                    <li className="sidebar-item">
+                     <LikeIcon />    <NavLink to="/likevideos" activeClassName="active-link" className="global-sidebar__item-link">  Liked videos</NavLink>
                     </li>
                     <li className="sidebar-item">
-                     <LikeIcon />    <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  Liked videos</NavLink>
-                    </li>
-                    <li className="sidebar-item">
-                      <MusicIcon />  <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  Music</NavLink>
+                      <MusicIcon />  <NavLink to="/music" activeClassName="active-link" className="global-sidebar__item-link">  Music</NavLink>
                     </li>
                         <li className="sidebar-item">
-                         <GamesIcon />   <NavLink to="/" activeClassName="active-link" className="global-sidebar__item-link">  Games</NavLink>
+                         <GamesIcon />   <NavLink to="/games" activeClassName="active-link" className="global-sidebar__item-link">  Games</NavLink>
                     </li>
                 </ul>
                     <p className="show-more">
